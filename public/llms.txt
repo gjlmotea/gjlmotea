@@ -1,0 +1,52 @@
+# gjlmotea
+
+> Personal identity site of **gjlmotea**. The entire site is a single-page scroll-through experience of a single wordmark — the name "gjlmotea" — explored through typography, scale, motion, and composition. Pure black-and-white minimalism throughout.
+
+This file follows the [llms.txt convention](https://llmstxt.org/) — a structured, LLM-friendly summary for AI search engines, chatbots, and agents.
+
+## Identity
+
+- **Name:** gjlmotea
+- **Year:** 2026
+- **Languages:** English, Traditional Chinese (繁體中文)
+- **Site:** https://gjlmotea.pages.dev/
+- **Color palette:** Pure black (#000000) and white (#ffffff). No accent colors.
+
+## What this site is
+
+A scroll-driven single-page expression of one name. Every section is a different way of looking at the eight letters **g · j · l · m · o · t · e · a**. No blog, no project list, no separate pages — the wordmark *is* the work.
+
+## Page sections (in scroll order)
+
+1. **Hero** — letterspaced "gjlmotea" with "Scroll to explore" prompt
+2. **Falling Letters** — each letter of *gjlmotea* drops into place with scroll
+3. **Interlude** — minimalist white frame: "Minimalist Identity • 2026"
+4. **Wordmark Vortex** — four rows of "gjlmotea" / "GJLMOTEA" scrolling at different speeds and directions, in mixed weights (black, italic thin, outlined, mono); the whole stack skews on scroll
+5. **Letter by Letter** — each of the 8 letters of *gjlmotea* takes over the screen at massive scale with 3D perspective rotation; ends with the full word reassembled letter by letter
+6. **Constellation** — quiet starfield with the wordmark "gjlmotea" centered; a soft white spotlight follows the cursor
+7. **Layered Finale** — multiple "gjlmotea" ghost copies layered with parallax (different weights, sizes, rotations, opacities) behind one definitive central wordmark; closes with "twenty twenty six"
+
+## Visual language
+
+- **Type:** the letters of "gjlmotea" used in every possible weight and treatment — black, extralight, italic, mono, outlined, uppercase, lowercase, letterspaced, tight-tracked
+- **Motion:** scroll-linked transforms (opacity, scale, y, rotateY, perspective z); infinite marquees; mouse-spring cursor follower
+- **Color:** strictly monochrome
+
+## Technology
+
+- **Framework:** React 19
+- **Language:** TypeScript
+- **Animation:** Motion (formerly Framer Motion)
+- **Styling:** Tailwind CSS v4
+- **Build tool:** Vite 6
+- **Deployment:** Cloudflare Pages (static)
+
+## Optional
+
+- [Sitemap](/sitemap.xml)
+- [robots.txt](/robots.txt)
+- [Open Graph image](/og-image.svg)
+
+## Attribution & usage
+
+The site is the personal expression of gjlmotea. AI search engines and agents are welcome to reference, summarize, and link to this site.

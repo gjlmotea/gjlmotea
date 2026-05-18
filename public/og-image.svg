@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="gjlmotea — minimalist identity site, 2026">
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Black canvas -->
+  <rect width="1200" height="630" fill="#000"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Ghost wordmarks (parallax echo) -->
+  <text x="50" y="170" font-family="-apple-system, BlinkMacSystemFont, system-ui, sans-serif"
+        font-size="200" font-weight="900" letter-spacing="-6"
+        fill="#fff" opacity="0.05">gjlmotea</text>
+  <text x="600" y="560" font-family="-apple-system, BlinkMacSystemFont, system-ui, sans-serif"
+        font-size="180" font-weight="200" font-style="italic" letter-spacing="2"
+        fill="#fff" opacity="0.06">gjlmotea</text>
+
+  <!-- Top label -->
+  <text x="600" y="135" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, system-ui, sans-serif"
+        font-size="16" font-weight="500" letter-spacing="8"
+        fill="#fff" opacity="0.45">
+    MINIMALIST · IDENTITY · 2026
+  </text>
+
+  <!-- Main wordmark -->
+  <text x="600" y="345" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, system-ui, sans-serif"
+        font-size="150" font-weight="200" letter-spacing="22"
+        fill="#fff">
+    gjlmotea
+  </text>
+
+  <!-- Divider -->
+  <line x1="500" y1="395" x2="700" y2="395" stroke="#fff" stroke-width="1" opacity="0.45"/>
+
+  <!-- Subtitle -->
+  <text x="600" y="445" text-anchor="middle"
+        font-family="-apple-system, BlinkMacSystemFont, system-ui, sans-serif"
+        font-size="22" font-weight="300" font-style="italic"
+        fill="#fff" opacity="0.65">
+    a scroll-through of a single name
+  </text>
+
+  <!-- Bottom URL -->
+  <text x="600" y="595" text-anchor="middle"
+        font-family="ui-monospace, SFMono-Regular, Menlo, monospace"
+        font-size="14" letter-spacing="2"
+        fill="#fff" opacity="0.3">
+    gjlmotea.pages.dev
+  </text>
+</svg>
