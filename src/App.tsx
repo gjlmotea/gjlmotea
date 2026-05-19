@@ -54,13 +54,13 @@ export default function App() {
           </motion.div>
         </section>
 
-        {/* Section 2 — Falling Letters */}
-        <div className="relative h-[300vh]">
+        {/* Section 2 — Falling Letters (wrapper 500vh; animation finishes by ~60% so there's a long assembled-view window before transition) */}
+        <div className="relative h-[500vh]">
           <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
             <div className="flex gap-4 md:gap-12 items-baseline">
               {letters.map((letter, index) => {
-                const start = 0.1 + index * 0.04;
-                const end = 0.4 + index * 0.04;
+                const start = 0.2 + index * 0.03;
+                const end = 0.4 + index * 0.03;
 
                 const y = useTransform(
                   scrollYProgress,
@@ -126,8 +126,23 @@ export default function App() {
       {/* ============ SECTION 5 — LAYERED FINALE ============ */}
       <SectionFinale />
 
-      {/* ============ SECTION 6 — STAR BURST FINALE ============ */}
+      {/* ============ SECTION 6 — DREAMSCAPE ============ */}
+      <SectionDreamscape />
+
+      {/* ============ SECTION 7 — STAR BURST FINALE ============ */}
       <SectionStarBurst />
+
+      {/* ============ SECTION 8 — WORMHOLE ============ */}
+      <SectionWormhole />
+
+      {/* ============ SECTION 9 — WHITE HOLE ============ */}
+      <SectionWhiteHole />
+
+      {/* ============ SECTION 10 — WARPED REALITY ============ */}
+      <SectionWarpedReality />
+
+      {/* ============ SECTION 11 — TORSION FIELD ============ */}
+      <SectionTorsionField />
     </div>
   );
 }
@@ -495,6 +510,455 @@ function SectionStarBurst() {
           gjlmotea
         </motion.h2>
       </div>
+    </section>
+  );
+}
+
+/* =============================================================
+   SECTION 8 — WORMHOLE
+   Conic black/white background rotating, plus tunnel rings
+   collapsing inward. Mix-blend-difference keeps everything visible.
+   ============================================================= */
+function SectionWormhole() {
+  const rings = useMemo(
+    () =>
+      Array.from({ length: 28 }, (_, i) => ({
+        delay: i * 0.16,
+        thickness: i % 3 === 0 ? 2 : 1,
+      })),
+    [],
+  );
+
+  return (
+    <section className="relative h-screen overflow-hidden bg-black">
+      {/* Spinning conic gradient */}
+      <motion.div
+        className="absolute inset-0"
+        style={{
+          background:
+            "conic-gradient(from 0deg at 50% 50%, #000 0deg, #fff 90deg, #000 180deg, #fff 270deg, #000 360deg)",
+        }}
+        animate={{ rotate: 360 }}
+        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+      />
+
+      {/* Tunnel rings (collapsing inward) */}
+      {rings.map((r, i) => (
+        <motion.div
+          key={i}
+          className="absolute top-1/2 left-1/2 rounded-full border"
+          style={{
+            width: 1000,
+            height: 1000,
+            marginLeft: -500,
+            marginTop: -500,
+            borderColor: "#fff",
+            borderWidth: r.thickness,
+            mixBlendMode: "difference",
+          }}
+          animate={{
+            scale: [1.3, 0],
+            opacity: [0, 1, 1, 0],
+          }}
+          transition={{
+            duration: 4.5,
+            repeat: Infinity,
+            delay: r.delay,
+            ease: "easeIn",
+            times: [0, 0.1, 0.85, 1],
+          }}
+        />
+      ))}
+
+      {/* Center vortex eye */}
+      <div
+        className="absolute top-1/2 left-1/2 rounded-full pointer-events-none"
+        style={{
+          width: 80,
+          height: 80,
+          marginLeft: -40,
+          marginTop: -40,
+          background: "radial-gradient(circle, rgba(128,128,128,0.4), transparent 70%)",
+          mixBlendMode: "difference",
+        }}
+      />
+
+      {/* Centered wordmark (mix-blend-difference keeps it visible on both halves) */}
+      <div
+        className="absolute top-12 md:top-16 left-1/2 -translate-x-1/2 text-base md:text-xl font-light tracking-[0.4em] uppercase z-10 pointer-events-none"
+        style={{ color: "#fff", mixBlendMode: "difference" }}
+      >
+        gjlmotea
+      </div>
+    </section>
+  );
+}
+
+/* =============================================================
+   SECTION 9 — WHITE HOLE
+   Mirror of black hole. Black field, white dots in reverse-rotating
+   spiral, plus bright glowing center and outward radiating particles.
+   ============================================================= */
+function SectionWhiteHole() {
+  const dots = useMemo(() => {
+    const arr: { x: number; y: number; size: number; opacity: number }[] = [];
+    const total = 280;
+    for (let i = 0; i < total; i++) {
+      const t = i / total;
+      const angle = t * 7 * Math.PI;
+      const radius = 40 + t * 520;
+      const size = 1 + (1 - t) * 2.8;
+      const opacity = 0.3 + (1 - t) * 0.7;
+      arr.push({
+        x: Math.cos(angle) * radius,
+        y: Math.sin(angle) * radius,
+        size,
+        opacity,
+      });
+    }
+    return arr;
+  }, []);
+
+  const bursts = useMemo(
+    () =>
+      Array.from({ length: 36 }, (_, i) => ({
+        angle: (i / 36) * 360,
+        delay: Math.random() * 4,
+        duration: 2.2 + Math.random() * 1.5,
+      })),
+    [],
+  );
+
+  return (
+    <section className="relative h-screen bg-black overflow-hidden">
+      {/* Counter-rotating spiral */}
+      <motion.div
+        className="absolute top-1/2 left-1/2"
+        style={{ width: 0, height: 0 }}
+        animate={{ rotate: -360 }}
+        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+      >
+        {dots.map((d, i) => (
+          <div
+            key={i}
+            className="absolute rounded-full bg-white"
+            style={{
+              left: d.x,
+              top: d.y,
+              width: d.size,
+              height: d.size,
+              opacity: d.opacity,
+              marginLeft: -d.size / 2,
+              marginTop: -d.size / 2,
+            }}
+          />
+        ))}
+      </motion.div>
+
+      {/* Outward radiating particles */}
+      {bursts.map((b, i) => {
+        const rad = (b.angle * Math.PI) / 180;
+        return (
+          <motion.div
+            key={`b-${i}`}
+            className="absolute top-1/2 left-1/2 rounded-full bg-white"
+            style={{
+              width: 5,
+              height: 5,
+              marginLeft: -2.5,
+              marginTop: -2.5,
+              boxShadow: "0 0 12px 2px rgba(255,255,255,0.8)",
+            }}
+            animate={{
+              x: [0, Math.cos(rad) * 460],
+              y: [0, Math.sin(rad) * 460],
+              opacity: [0, 1, 0],
+              scale: [0.4, 1.4, 0.4],
+            }}
+            transition={{
+              duration: b.duration,
+              repeat: Infinity,
+              delay: b.delay,
+              ease: "easeOut",
+            }}
+          />
+        );
+      })}
+
+      {/* Bright emission core */}
+      <div
+        className="absolute top-1/2 left-1/2 rounded-full pointer-events-none"
+        style={{
+          width: 320,
+          height: 320,
+          marginLeft: -160,
+          marginTop: -160,
+          background:
+            "radial-gradient(circle, #fff 18%, rgba(255,255,255,0.5) 45%, transparent 80%)",
+          boxShadow: "0 0 140px 60px rgba(255,255,255,0.55)",
+        }}
+      />
+
+      {/* Centered wordmark (sits inside the bright glow zone) */}
+      <div className="absolute top-12 md:top-16 left-1/2 -translate-x-1/2 text-base md:text-xl font-light tracking-[0.4em] uppercase text-white/80 pointer-events-none z-10">
+        gjlmotea
+      </div>
+    </section>
+  );
+}
+
+/* =============================================================
+   SECTION 10 — TORSION FIELD
+   A regular grid warped by SVG turbulence + displacement filter.
+   The filter's baseFrequency and seed animate continuously,
+   producing a living "force-field bends space" effect.
+   ============================================================= */
+function SectionTorsionField() {
+  return (
+    <section className="relative h-screen overflow-hidden bg-black">
+      <svg
+        viewBox="0 0 1600 900"
+        preserveAspectRatio="xMidYMid slice"
+        className="absolute inset-0 w-full h-full"
+      >
+        <defs>
+          <filter
+            id="torsion-warp"
+            x="-30%"
+            y="-30%"
+            width="160%"
+            height="160%"
+          >
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.012"
+              numOctaves={2}
+              seed={3}
+              result="turb"
+            >
+              <animate
+                attributeName="baseFrequency"
+                values="0.006;0.022;0.006"
+                dur="14s"
+                repeatCount="indefinite"
+              />
+              <animate
+                attributeName="seed"
+                values="1;90;1"
+                dur="22s"
+                repeatCount="indefinite"
+              />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="turb" scale="90" />
+          </filter>
+        </defs>
+        <g filter="url(#torsion-warp)">
+          <g stroke="white" strokeWidth="0.7" opacity="0.75">
+            {Array.from({ length: 26 }).map((_, i) => (
+              <line
+                key={`h-${i}`}
+                x1={-100}
+                y1={(i / 25) * 900}
+                x2={1700}
+                y2={(i / 25) * 900}
+              />
+            ))}
+            {Array.from({ length: 40 }).map((_, i) => (
+              <line
+                key={`v-${i}`}
+                x1={(i / 39) * 1600}
+                y1={-100}
+                x2={(i / 39) * 1600}
+                y2={1000}
+              />
+            ))}
+          </g>
+          {/* Wordmark inside the filter — gets warped along with the grid */}
+          <text
+            x="800"
+            y="470"
+            textAnchor="middle"
+            fill="white"
+            fontSize="72"
+            fontWeight={200}
+            fontFamily="-apple-system, BlinkMacSystemFont, system-ui, sans-serif"
+            letterSpacing="22"
+            opacity="0.85"
+          >
+            gjlmotea
+          </text>
+        </g>
+      </svg>
+      <div className="absolute bottom-10 right-10 text-[10px] tracking-[0.4em] uppercase text-white/30">
+        space bends
+      </div>
+    </section>
+  );
+}
+
+/* =============================================================
+   SECTION 11 — WARPED REALITY
+   Eight rows of "gjlmotea" run through a turbulence + displacement
+   filter that slowly evolves. Mixed weights/letter-spacing/grays.
+   ============================================================= */
+function SectionWarpedReality() {
+  return (
+    <section className="relative h-screen overflow-hidden bg-black">
+      <svg
+        viewBox="0 0 1600 900"
+        preserveAspectRatio="xMidYMid slice"
+        className="absolute inset-0 w-full h-full"
+      >
+        <defs>
+          <filter
+            id="reality-warp"
+            x="-30%"
+            y="-30%"
+            width="160%"
+            height="160%"
+          >
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.006"
+              numOctaves={3}
+              seed={5}
+              result="turb"
+            >
+              <animate
+                attributeName="baseFrequency"
+                values="0.003;0.018;0.003"
+                dur="11s"
+                repeatCount="indefinite"
+              />
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="turb" scale="110" />
+          </filter>
+        </defs>
+        <g filter="url(#reality-warp)">
+          <text
+            x="800"
+            y="500"
+            textAnchor="middle"
+            fontSize="140"
+            fill="#ffffff"
+            fontFamily="-apple-system, BlinkMacSystemFont, system-ui, sans-serif"
+            fontWeight={200}
+            letterSpacing="28"
+            opacity="0.9"
+          >
+            gjlmotea
+          </text>
+        </g>
+      </svg>
+    </section>
+  );
+}
+
+/* =============================================================
+   SECTION 12 — DREAMSCAPE
+   Soft floating grayscale gradient blobs (heavy blur) + drifting
+   ghost "gjlmotea" texts that fade in/out. Pure hypnagogic mood.
+   ============================================================= */
+function SectionDreamscape() {
+  const blobs = useMemo(
+    () =>
+      Array.from({ length: 12 }, () => ({
+        size: 200 + Math.random() * 380,
+        gray: 60 + Math.floor(Math.random() * 160),
+        opacity: 0.18 + Math.random() * 0.3,
+        startX: Math.random() * 100,
+        startY: Math.random() * 100,
+        duration: 20 + Math.random() * 20,
+        delay: Math.random() * 14,
+      })),
+    [],
+  );
+
+  const ghosts = useMemo(
+    () =>
+      Array.from({ length: 12 }, () => ({
+        x: 8 + Math.random() * 84,
+        y: 10 + Math.random() * 80,
+        size: 16 + Math.random() * 48,
+        duration: 2.5 + Math.random() * 4,
+        delay: Math.random() * 6,
+        weight: Math.random() > 0.5 ? 200 : 700,
+        italic: Math.random() > 0.6,
+      })),
+    [],
+  );
+
+  return (
+    <section className="relative h-screen overflow-hidden bg-black">
+      {/* Floating gray gradient blobs */}
+      {blobs.map((b, i) => (
+        <motion.div
+          key={`b-${i}`}
+          className="absolute rounded-full pointer-events-none"
+          style={{
+            width: b.size,
+            height: b.size,
+            left: `${b.startX}%`,
+            top: `${b.startY}%`,
+            marginLeft: -b.size / 2,
+            marginTop: -b.size / 2,
+            background: `radial-gradient(circle, rgba(${b.gray},${b.gray},${b.gray},${b.opacity}), transparent 70%)`,
+            filter: "blur(50px)",
+          }}
+          animate={{
+            x: [0, 130, -70, 90, 0],
+            y: [0, -110, 70, -50, 0],
+            scale: [1, 1.4, 0.8, 1.2, 1],
+          }}
+          transition={{
+            duration: b.duration,
+            repeat: Infinity,
+            delay: b.delay,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+
+      {/* Flickering / flashing wordmarks — sharp bursts with glow */}
+      {ghosts.map((g, i) => (
+        <motion.div
+          key={`g-${i}`}
+          className="absolute pointer-events-none text-white"
+          style={{
+            left: `${g.x}%`,
+            top: `${g.y}%`,
+            fontSize: g.size,
+            fontWeight: g.weight,
+            fontStyle: g.italic ? "italic" : "normal",
+            letterSpacing: g.weight === 200 ? "0.25em" : "-0.02em",
+            whiteSpace: "nowrap",
+            textShadow:
+              "0 0 12px rgba(255,255,255,0.9), 0 0 28px rgba(255,255,255,0.6), 0 0 60px rgba(255,255,255,0.35)",
+          }}
+          animate={{
+            opacity: [0, 0, 1, 0.05, 1, 0.2, 0.95, 0, 0.7, 0, 0, 0, 0],
+          }}
+          transition={{
+            duration: g.duration,
+            repeat: Infinity,
+            delay: g.delay,
+            times: [0, 0.18, 0.2, 0.22, 0.24, 0.27, 0.3, 0.33, 0.36, 0.4, 0.6, 0.85, 1],
+            ease: "linear",
+          }}
+        >
+          gjlmotea
+        </motion.div>
+      ))}
+
+      {/* Vignette */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.55) 100%)",
+        }}
+      />
+
     </section>
   );
 }
