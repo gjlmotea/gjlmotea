@@ -101,8 +101,8 @@ export default function App() {
           </div>
         </div>
 
-        {/* Section 3 — White Interlude */}
-        <section className="h-screen flex items-center justify-center bg-white text-black z-20 relative">
+        {/* Section 3 — Black Interlude (was white, now black; text colors flipped) */}
+        <section className="h-screen flex items-center justify-center bg-black text-white z-20 relative">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -110,10 +110,10 @@ export default function App() {
             viewport={{ once: false, amount: 0.5 }}
             className="text-center"
           >
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-white">
               gjlmotea
             </h2>
-            <p className="text-gray-500 tracking-widest uppercase text-xs md:text-sm">
+            <p className="text-gray-400 tracking-widest uppercase text-xs md:text-sm">
               Minimalist Identity • 2026
             </p>
           </motion.div>
