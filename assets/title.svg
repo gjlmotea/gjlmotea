@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="90" viewBox="0 0 700 90">
+  <defs>
+    <style type="text/css">
+      @font-face {
+        font-family: 'Inter';
+        font-weight: 200;
+        font-style: normal;
+        src: url(data:font/woff2;base64,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) format('woff2');
+      }
+      @font-face {
+        font-family: 'PressStart2P';
+        font-weight: 400;
+        font-style: normal;
+        src: url(data:font/woff2;base64,d09GMgABAAAAAANgAAwAAAAACHwAAAMQAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHCoGYACBLBEICoZ4hHcBNgIkAygLKAAEIAWECgcgG4AGAC4G7KZjGFOPegvTy3Nrxpk6MT6Mh69l7f3u3tQzc0dISaFjKp9C8BQKiXJ4hEZRnhqFY+0uzG2X/PzGULH4O265kwmR1AC+9osNXAuX0jWTWNoHcUGc8ifEuuW2+PofILy2nqyk9ICxWRcwNqn7/++n3kXZx51RpBXYbOITevGj1mX/TKQCeAQ7wyqaaClNYLqJSLqtDDp+WzVqf/hfKlBtY0EeO/F4iXl84/sWi4aZACi5j+8GpG9pApx9nYyrfPELBkR8+KtHLzwvvWGDY+4h9/EWCEj/co8NKCRkLEEJLEH7gU0QLdnAJauorKapbYAjUcytbBxnwottGJe/oHtnjVZScEYJRlDAN0LMNA8WA2wDVgBTKVYDUAAkcclpJuBt22PBuF3RDpe0ZTxXEFRqnWuLPQZNMJ0mvNRo5S7qNTVGCzE6rXnn3lLmivOHs6ZGU40u+TqNbhBddm60YjohkrqoDmtOJVWmNIjGEG4GdNpbg2rJ1ZKhG120/kx6qiCrnNmkuni3UY5UW67Utu1TNN5Hl2t0lavRDLRuIwaZhOojM59NSnUhQxYaCbBfa3x5EWFzoguMTTp6PVrWdZOhot9m5jJaBu7qaHsFmtZ0YhHWI00Ckgm7xfWISEpP1rh1b5d1/tykQxMgwkg80vO5INghO0QAjsn9o8R0ADQ+gYrm6LrT5+KV5B3KtR0ciDenRa8XPQAy96eWvRm9YSREcBj9NwZ9LpD5OVWOa/P7/o9z7uG3GafEX+9nEQD5Ue4xkkDwI9wEX/IjBIRG7n0BrS9g1eKLTf5HtxZjs48Qj0YuokSZ4A/QfWGNry+ZM/VlB6L4ij1xxDewKp6+e2hHfHXUxtbN3oxCdYR8PLx80IBKgjr2JAcHqO+Is2erHUZlYw5Z8OzKOjlSbeyjnrcQbIhuMu421iR+ES5t15GVA7qYRdZQr95uyd6ZRIRKiDxCLZzVyki3s0kYcu+PDE7E0/Nz8UgtLm96iEWNz9HfcV/ixCTfzyA/Y9RhnzP7TCVUfToVcxSRaLb2AgAA) format('woff2');
+      }
+      .inter {
+        font-family: 'Inter', sans-serif;
+        font-weight: 200;
+        font-size: 46px;
+        letter-spacing: 14px;
+        fill: #ffffff;
+      }
+      .pixel {
+        font-family: 'PressStart2P', monospace;
+        font-weight: 400;
+        font-size: 26px;
+        fill: #ffffff;
+      }
+    </style>
+  </defs>
+  <text class="inter" x="350" y="50%" text-anchor="middle" dominant-baseline="middle" opacity="0">gjlmotea<animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.1150;0.1250;1" dur="20s" repeatCount="indefinite" /></text>
+  <text class="inter" x="350" y="50%" text-anchor="middle" dominant-baseline="middle" opacity="0">GJLMoTea<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.1250;0.1350;0.2400;0.2500;1" dur="20s" repeatCount="indefinite" /></text>
+  <text class="inter" x="350" y="50%" text-anchor="middle" dominant-baseline="middle" opacity="0">GJLMOTEA<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.2500;0.2600;0.3650;0.3750;1" dur="20s" repeatCount="indefinite" /></text>
+  <text class="inter" x="350" y="50%" text-anchor="middle" dominant-baseline="middle" opacity="0">g j l m o t e a<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.3750;0.3850;0.4900;0.5000;1" dur="20s" repeatCount="indefinite" /></text>
+  <text class="inter" x="350" y="50%" text-anchor="middle" dominant-baseline="middle" opacity="0">gjlmotea.<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.5000;0.5100;0.6150;0.6250;1" dur="20s" repeatCount="indefinite" /></text>
+  <text class="pixel" x="350" y="50%" text-anchor="middle" dominant-baseline="middle" opacity="0">gjlmotea<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.6250;0.6350;0.7400;0.7500;1" dur="20s" repeatCount="indefinite" /></text>
+  <text class="pixel" x="350" y="50%" text-anchor="middle" dominant-baseline="middle" opacity="0">GJLMoTea<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.7500;0.7600;0.8650;0.8750;1" dur="20s" repeatCount="indefinite" /></text>
+  <text class="pixel" x="350" y="50%" text-anchor="middle" dominant-baseline="middle" opacity="0">GJLMOTEA<animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.8750;0.8850;0.9900;1.0000;1" dur="20s" repeatCount="indefinite" /></text>
+</svg>
