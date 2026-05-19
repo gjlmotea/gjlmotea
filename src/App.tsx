@@ -120,310 +120,15 @@ export default function App() {
         </section>
       </div>
 
-      {/* ============ SECTION 4 — WORDMARK VORTEX ============ */}
-      <SectionVortex />
-
-      {/* ============ SECTION 5 — LETTER BY LETTER ============ */}
-      <SectionLetterByLetter />
-
-      {/* ============ SECTION 6 — CONSTELLATION ============ */}
+      {/* ============ SECTION 4 — CONSTELLATION ============ */}
       <SectionConstellation />
 
-      {/* ============ SECTION 7 — LAYERED FINALE ============ */}
+      {/* ============ SECTION 5 — LAYERED FINALE ============ */}
       <SectionFinale />
+
+      {/* ============ SECTION 6 — STAR BURST FINALE ============ */}
+      <SectionStarBurst />
     </div>
-  );
-}
-
-/* =============================================================
-   SECTION 4 — WORDMARK VORTEX
-   Four rows of "gjlmotea" in different typographic treatments
-   scrolling in opposite directions; whole section skews on scroll.
-   ============================================================= */
-function SectionVortex() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const skew = useTransform(scrollYProgress, [0, 0.5, 1], [-10, 0, 10]);
-
-  const rows = [
-    {
-      text: "GJLMOTEA · ",
-      duration: 32,
-      reverse: false,
-      cls: "text-7xl md:text-[10rem] font-black tracking-tighter uppercase",
-      outline: false,
-    },
-    {
-      text: "gjlmotea — ",
-      duration: 50,
-      reverse: true,
-      cls: "text-4xl md:text-7xl font-extralight italic tracking-wide",
-      outline: false,
-    },
-    {
-      text: "GJLMOTEA / ",
-      duration: 28,
-      reverse: false,
-      cls: "text-6xl md:text-9xl font-bold tracking-tight uppercase",
-      outline: true,
-    },
-    {
-      text: "gjlmotea  ",
-      duration: 60,
-      reverse: true,
-      cls: "text-3xl md:text-5xl font-mono uppercase tracking-[0.4em] opacity-40",
-      outline: false,
-    },
-  ];
-
-  return (
-    <section
-      ref={ref}
-      className="bg-black text-white py-32 md:py-48 overflow-hidden relative"
-    >
-      <motion.div style={{ skewY: skew }} className="space-y-6 md:space-y-10">
-        {rows.map((row, i) => (
-          <MarqueeRow
-            key={i}
-            text={row.text}
-            duration={row.duration}
-            reverse={row.reverse}
-            cls={row.cls}
-            outline={row.outline}
-          />
-        ))}
-      </motion.div>
-    </section>
-  );
-}
-
-function MarqueeRow({
-  text,
-  duration,
-  reverse,
-  cls,
-  outline,
-}: {
-  text: string;
-  duration: number;
-  reverse: boolean;
-  cls: string;
-  outline: boolean;
-  key?: number;
-}) {
-  const repeated = text.repeat(6);
-  const outlineStyle = outline
-    ? { WebkitTextStroke: "1.5px white", color: "transparent" as const }
-    : {};
-
-  return (
-    <div className="overflow-hidden whitespace-nowrap">
-      <motion.div
-        className="flex whitespace-nowrap"
-        animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
-        transition={{ duration, repeat: Infinity, ease: "linear" }}
-      >
-        <span className={`${cls} shrink-0 pr-8`} style={outlineStyle}>
-          {repeated}
-        </span>
-        <span className={`${cls} shrink-0 pr-8`} style={outlineStyle}>
-          {repeated}
-        </span>
-      </motion.div>
-    </div>
-  );
-}
-
-/* =============================================================
-   SECTION 5 — LETTER BY LETTER
-   Each of the 8 letters of "gjlmotea" takes over the screen
-   in sequence with massive scale and 3D rotation. Closes with
-   the full word reassembled letter by letter.
-   ============================================================= */
-function SectionLetterByLetter() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
-  });
-
-  const letters = NAME.split("");
-  const total = letters.length + 1; // +1 for the final reassembled frame
-
-  return (
-    <section
-      ref={ref}
-      className="relative bg-black"
-      style={{ height: `${total * 90}vh` }}
-    >
-      <div
-        className="sticky top-0 h-screen flex items-center justify-center overflow-hidden"
-        style={{ perspective: 1600 }}
-      >
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 text-[10px] md:text-xs tracking-[0.5em] uppercase text-white/40">
-          eight letters · one name
-        </div>
-
-        {letters.map((letter, i) => (
-          <LetterFrame
-            key={i}
-            scrollYProgress={scrollYProgress}
-            letter={letter}
-            index={i}
-            count={letters.length}
-            total={total}
-          />
-        ))}
-
-        <AssembledFrame
-          scrollYProgress={scrollYProgress}
-          startProgress={letters.length / total}
-        />
-      </div>
-    </section>
-  );
-}
-
-function LetterFrame({
-  scrollYProgress,
-  letter,
-  index,
-  count,
-  total,
-}: {
-  scrollYProgress: MotionValue<number>;
-  letter: string;
-  index: number;
-  count: number;
-  total: number;
-  key?: number;
-}) {
-  const start = index / total;
-  const end = (index + 1) / total;
-  const slot = end - start;
-
-  const opacity = useTransform(
-    scrollYProgress,
-    [start, start + slot * 0.25, end - slot * 0.25, end],
-    [0, 1, 1, 0],
-  );
-  const scale = useTransform(
-    scrollYProgress,
-    [start, start + slot * 0.3, end - slot * 0.3, end],
-    [0.6, 1, 1, 1.3],
-  );
-  const rotateY = useTransform(
-    scrollYProgress,
-    [start, (start + end) / 2, end],
-    [50, 0, -50],
-  );
-  const z = useTransform(
-    scrollYProgress,
-    [start, (start + end) / 2, end],
-    [-300, 0, -300],
-  );
-
-  return (
-    <motion.div
-      style={{ opacity, scale, rotateY, z }}
-      className="absolute flex flex-col items-center will-change-transform"
-    >
-      <div className="text-[10px] md:text-xs tracking-[0.5em] uppercase text-white/30 mb-6 md:mb-10">
-        {String(index + 1).padStart(2, "0")} / 0{count}
-      </div>
-      <div className="text-[40vw] md:text-[28rem] font-black leading-[0.8] tracking-tighter">
-        {letter}
-      </div>
-      <div className="text-xs md:text-sm tracking-[0.4em] uppercase text-white/40 mt-6 md:mt-10">
-        {letter} · letter {String(index + 1).padStart(2, "0")}
-      </div>
-    </motion.div>
-  );
-}
-
-function AssembledFrame({
-  scrollYProgress,
-  startProgress,
-}: {
-  scrollYProgress: MotionValue<number>;
-  startProgress: number;
-}) {
-  const remaining = 1 - startProgress;
-  const opacity = useTransform(
-    scrollYProgress,
-    [startProgress, startProgress + remaining * 0.3, 1],
-    [0, 1, 1],
-  );
-  const scale = useTransform(
-    scrollYProgress,
-    [startProgress, startProgress + remaining * 0.8],
-    [0.7, 1],
-  );
-
-  return (
-    <motion.div
-      style={{ opacity, scale }}
-      className="absolute flex flex-col items-center"
-    >
-      <div className="text-[10px] md:text-xs tracking-[0.5em] uppercase text-white/40 mb-6 md:mb-10">
-        assembled
-      </div>
-      <div className="flex items-baseline">
-        {NAME.split("").map((letter, idx) => (
-          <AssembledLetter
-            key={idx}
-            scrollYProgress={scrollYProgress}
-            startProgress={startProgress}
-            idx={idx}
-            letter={letter}
-          />
-        ))}
-      </div>
-      <div className="h-px w-32 bg-white/50 my-8" />
-      <div className="text-xs md:text-sm tracking-[0.4em] uppercase text-white/50">
-        gjlmotea
-      </div>
-    </motion.div>
-  );
-}
-
-function AssembledLetter({
-  scrollYProgress,
-  startProgress,
-  idx,
-  letter,
-}: {
-  scrollYProgress: MotionValue<number>;
-  startProgress: number;
-  idx: number;
-  letter: string;
-  key?: number;
-}) {
-  const remaining = 1 - startProgress;
-  const stagger = (idx / NAME.length) * remaining * 0.4;
-  const begin = startProgress + remaining * 0.1 + stagger;
-  const y = useTransform(
-    scrollYProgress,
-    [begin, begin + remaining * 0.25],
-    [80, 0],
-    { clamp: true },
-  );
-  const opacity = useTransform(
-    scrollYProgress,
-    [begin, begin + remaining * 0.15],
-    [0, 1],
-    { clamp: true },
-  );
-  return (
-    <motion.span
-      style={{ y, opacity }}
-      className="text-[14vw] md:text-[11rem] font-black tracking-tighter leading-none inline-block"
-    >
-      {letter}
-    </motion.span>
   );
 }
 
@@ -656,6 +361,139 @@ function SectionFinale() {
             twenty twenty six
           </motion.p>
         </motion.div>
+      </div>
+    </section>
+  );
+}
+
+/* =============================================================
+   SECTION 6 — STAR BURST FINALE
+   Many overlapping star bursts, ring explosions, and supernovas
+   on a black field. Central faint "gjlmotea" wordmark fades in.
+   ============================================================= */
+function SectionStarBurst() {
+  const stars = useMemo(
+    () =>
+      Array.from({ length: 100 }, () => ({
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 3 + 1,
+        delay: Math.random() * 5,
+        duration: 1.5 + Math.random() * 2.5,
+      })),
+    [],
+  );
+
+  const rings = useMemo(
+    () =>
+      Array.from({ length: 10 }, () => ({
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        maxSize: 200 + Math.random() * 250,
+        delay: Math.random() * 7,
+        duration: 2.5 + Math.random() * 2,
+      })),
+    [],
+  );
+
+  const supernovas = useMemo(
+    () =>
+      Array.from({ length: 5 }, () => ({
+        x: 15 + Math.random() * 70,
+        y: 15 + Math.random() * 70,
+        delay: Math.random() * 10,
+      })),
+    [],
+  );
+
+  return (
+    <section className="relative h-screen bg-black overflow-hidden">
+      {/* Layer 1 — burst stars (pop and fade) */}
+      {stars.map((s, i) => (
+        <motion.div
+          key={`s-${i}`}
+          className="absolute rounded-full bg-white pointer-events-none"
+          style={{
+            left: `${s.x}%`,
+            top: `${s.y}%`,
+            width: s.size,
+            height: s.size,
+          }}
+          animate={{ scale: [0, 4, 0], opacity: [0, 1, 0] }}
+          transition={{
+            duration: s.duration,
+            repeat: Infinity,
+            delay: s.delay,
+            ease: "easeOut",
+          }}
+        />
+      ))}
+
+      {/* Layer 2 — expanding ring explosions */}
+      {rings.map((r, i) => (
+        <div
+          key={`r-${i}`}
+          className="absolute pointer-events-none"
+          style={{ left: `${r.x}%`, top: `${r.y}%` }}
+        >
+          <motion.div
+            className="rounded-full border border-white"
+            style={{
+              width: r.maxSize,
+              height: r.maxSize,
+              marginLeft: -r.maxSize / 2,
+              marginTop: -r.maxSize / 2,
+            }}
+            animate={{ scale: [0, 1], opacity: [0.7, 0] }}
+            transition={{
+              duration: r.duration,
+              repeat: Infinity,
+              delay: r.delay,
+              ease: "easeOut",
+            }}
+          />
+        </div>
+      ))}
+
+      {/* Layer 3 — supernova flashes with glow */}
+      {supernovas.map((sn, i) => (
+        <div
+          key={`sn-${i}`}
+          className="absolute pointer-events-none"
+          style={{ left: `${sn.x}%`, top: `${sn.y}%` }}
+        >
+          <motion.div
+            className="rounded-full bg-white"
+            style={{
+              width: 6,
+              height: 6,
+              marginLeft: -3,
+              marginTop: -3,
+              boxShadow: "0 0 60px 16px rgba(255,255,255,0.7)",
+            }}
+            animate={{ scale: [0, 10, 0], opacity: [0, 1, 0] }}
+            transition={{
+              duration: 1.8,
+              repeat: Infinity,
+              delay: sn.delay,
+              repeatDelay: 5,
+              ease: "easeOut",
+            }}
+          />
+        </div>
+      ))}
+
+      {/* Faint central wordmark — the calm in the chaos */}
+      <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+        <motion.h2
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 0.5, scale: 1 }}
+          transition={{ duration: 3, ease: "easeOut" }}
+          viewport={{ amount: 0.3 }}
+          className="text-4xl md:text-7xl font-thin tracking-[0.4em] uppercase text-white"
+        >
+          gjlmotea
+        </motion.h2>
       </div>
     </section>
   );
