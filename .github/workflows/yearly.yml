@@ -1,0 +1,46 @@
+name: Generate Yearly Stats
+
+on:
+  schedule:
+    # 每天 UTC 05:00 跑一次(= 台灣時間 13:00)
+    - cron: "0 5 * * *"
+  workflow_dispatch:           # 允許手動觸發
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/build_yearly.py'
+      - '.github/workflows/yearly.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build yearly SVGs
+        env:
+          GH_USER_TOKEN: ${{ secrets.GH_USER_TOKEN }}
+        run: |
+          mkdir -p dist
+          python scripts/build_yearly.py
+
+      - name: Push to output branch
+        run: |
+          cd dist
+          git init -q
+          git checkout -b output
+          git add .
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "update yearly stats"
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git push -f origin output

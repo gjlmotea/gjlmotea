@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=200&size=46&duration=2200&pause=1500&color=FFFFFF&center=true&vCenter=true&width=700&height=90&letterSpacing=14&lines=gjlmotea;GJLMoTea;GJLMOTEA;g+j+l+m+o+t+e+a;gjlmotea." alt="gjlmotea" />
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=200&size=46&duration=2200&pause=1500&color=FFFFFF&center=true&vCenter=true&width=700&height=90&letterSpacing=14&lines=gjlmotea;GJLMoTea;GJL+Mo+Tea;GJLMOTEA;g+j+l+m+o+t+e+a;gjlmotea." alt="gjlmotea" />
 
 <br>
 
@@ -46,6 +46,14 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=gjlmotea&hide_border=true&bg_color=00000000&color=ffffff&line=ffffff&point=ffffff&area=true&area_color=ffffff" />
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=gjlmotea&hide_border=true&bg_color=ffffff&color=000000&line=000000&point=000000&area=true&area_color=000000" alt="activity" />
+</picture>
+
+<br>
+
+<!-- Per-year: commits aggregated by year (auto-generated daily by Actions) -->
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gjlmotea/gjlmotea/output/yearly-dark.svg" />
+  <img src="https://raw.githubusercontent.com/gjlmotea/gjlmotea/output/yearly-light.svg" alt="commits per year" />
 </picture>
 
 <br>
