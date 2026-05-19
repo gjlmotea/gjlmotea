@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=200&size=46&duration=2200&pause=1500&color=FFFFFF&center=true&vCenter=true&width=700&height=90&letterSpacing=14&lines=gjlmotea;GJLMOTEA;g+j+l+m+o+t+e+a;gjlmotea." alt="gjlmotea" />
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=200&size=46&duration=2200&pause=1500&color=FFFFFF&center=true&vCenter=true&width=700&height=90&letterSpacing=14&lines=gjlmotea;GJLMoTea;GJLMOTEA;g+j+l+m+o+t+e+a;gjlmotea." alt="gjlmotea" />
 
 <br>
 
@@ -18,18 +18,6 @@
 </div>
 
 <br>
-<br>
-
-```ts
-const gjlmotea = {
-  craft:   ['React 19', 'TypeScript', 'Motion', 'Tailwind v4'],
-  build:   'Vite',
-  deploy:  'Cloudflare Pages',
-  palette: ['#000', '#fff'],
-  year:    2026,
-} as const;
-```
-
 <br>
 
 <div align="center">
@@ -48,5 +36,5 @@ const gjlmotea = {
 <br>
 
 <div align="center">
-<sub>minimalist · monochrome · motion · twenty twenty six</sub>
+<sub>twenty twenty six</sub>
 </div>
