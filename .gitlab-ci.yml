@@ -1,0 +1,16 @@
+# GitLab Pages → gjlmotea.gitlab.io
+# The published artifact MUST live in a directory named `public`. Vite builds to
+# `dist/`, so we build first, then replace the source `public/` with the build output.
+pages:
+  image: node:22
+  stage: deploy
+  script:
+    - npm ci
+    - npm run build
+    - rm -rf public
+    - mv dist public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
