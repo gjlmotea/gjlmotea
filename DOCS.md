@@ -87,8 +87,8 @@ or CLI signup) · 💲 paid / no free tier.
 | -------------------------- | ------------------ | ----------------------------------------------- | ------ |
 | `gjlmotea.pages.dev`       | Cloudflare Pages   | (dashboard settings)                            | ✅     |
 | `gjlmotea.workers.dev`     | Cloudflare Workers | `deploy/workers/wrangler.toml` (static assets)  | ✅     |
-| `gjlmotea.web.app`         | Firebase Hosting   | `firebase.json`, `.firebaserc`                  | ⚙️     |
-| `gjlmotea.firebaseapp.com` | Firebase Hosting   | `firebase.json`, `.firebaserc`                  | ⚙️     |
+| `gjlmotea.web.app`         | Firebase Hosting   | `firebase.json`, `.firebaserc`                  | ✅     |
+| `gjlmotea.firebaseapp.com` | Firebase Hosting   | `firebase.json`, `.firebaserc`                  | ✅     |
 | `gjlmotea.vercel.app`      | Vercel             | `vercel.json`                                   | ✅     |
 | `gjlmotea.netlify.app`     | Netlify            | `netlify.toml`                                  | ✅     |
 | `gjlmotea.github.io`       | GitHub Pages       | dedicated `gjlmotea.github.io` repo (created)   | ✅     |
