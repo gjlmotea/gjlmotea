@@ -86,17 +86,17 @@ or CLI signup) · 💲 paid / no free tier.
 | Subdomain (`gjlmotea.*`)   | Platform           | Config in repo                                  | Status |
 | -------------------------- | ------------------ | ----------------------------------------------- | ------ |
 | `gjlmotea.pages.dev`       | Cloudflare Pages   | (dashboard settings)                            | ✅     |
-| `gjlmotea.workers.dev`     | Cloudflare Workers | `wrangler.toml` (static assets) — not yet added | ◻️     |
+| `gjlmotea.workers.dev`     | Cloudflare Workers | `deploy/workers/wrangler.toml` (static assets)  | ✅     |
 | `gjlmotea.web.app`         | Firebase Hosting   | `firebase.json`, `.firebaserc`                  | ⚙️     |
 | `gjlmotea.firebaseapp.com` | Firebase Hosting   | `firebase.json`, `.firebaserc`                  | ⚙️     |
-| `gjlmotea.vercel.app`      | Vercel             | `vercel.json`                                   | ⚙️     |
-| `gjlmotea.netlify.app`     | Netlify            | `netlify.toml`                                  | ⚙️     |
-| `gjlmotea.github.io`       | GitHub Pages       | `deploy/github-pages.yml` (needs `gjlmotea.github.io` repo) | ⚙️ |
+| `gjlmotea.vercel.app`      | Vercel             | `vercel.json`                                   | ✅     |
+| `gjlmotea.netlify.app`     | Netlify            | `netlify.toml`                                  | ✅     |
+| `gjlmotea.github.io`       | GitHub Pages       | dedicated `gjlmotea.github.io` repo (created)   | ✅     |
 | `gjlmotea.gitlab.io`       | GitLab Pages       | `.gitlab-ci.yml` (needs GitLab project)         | ⚙️     |
 | `gjlmotea.fly.dev`         | Fly.io             | `fly.toml`, `deploy/fly/`                       | ⚙️     |
 | `gjlmotea.onrender.com`    | Render             | `render.yaml`                                   | ⚙️     |
 | `gjlmotea.replit.app`      | Replit             | import repo + Static Deployment                 | ◻️     |
-| `gjlmotea.surge.sh`        | Surge              | `npx surge dist gjlmotea.surge.sh` (CLI only)   | ◻️     |
+| `gjlmotea.surge.sh`        | Surge              | `npx surge dist gjlmotea.surge.sh` (CLI only)   | ✅     |
 | `gjlmotea.herokuapp.com`   | Heroku             | static buildpack + `static.json`                | ◻️ 💲  |
 
 #### B. Docs hosting
@@ -178,7 +178,8 @@ or CLI signup) · 💲 paid / no free tier.
 **Cloudflare Workers → `gjlmotea.workers.dev`**
 - Serves the build via Workers Static Assets. Add a minimal `wrangler.toml`
   (`name = "gjlmotea"`, `[assets] directory = "dist"`), then `npx wrangler deploy`.
-- The worker name (`gjlmotea`) becomes the subdomain. *(Config not added yet — ask to scaffold.)*
+- The worker name (`gjlmotea`) becomes the subdomain — live at `gjlmotea.gjlmotea.workers.dev`
+  (the account subdomain is also `gjlmotea`). Config: `deploy/workers/wrangler.toml`.
 
 **Replit → `gjlmotea.replit.app`**
 - Create a Repl by importing `gjlmotea/gjlmotea`, then use **Deployments → Static**

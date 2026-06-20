@@ -15,3 +15,10 @@ coverage/
 
 # stray
 PROFILE_README.md
+
+# local working docs (not for the public repo)
+HANDOFF.md
+
+# deploy CLI state (local only)
+.vercel
+.netlify
