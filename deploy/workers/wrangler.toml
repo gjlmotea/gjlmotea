@@ -1,0 +1,8 @@
+# Cloudflare Workers (static assets) → gjlmotea.workers.dev
+# Kept out of repo root so it can't interfere with the live Cloudflare Pages build.
+# Deploy:  npm run build && npx wrangler deploy -c deploy/workers/wrangler.toml
+name = "gjlmotea"
+compatibility_date = "2025-01-01"
+
+[assets]
+directory = "../../dist"

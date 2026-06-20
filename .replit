@@ -1,0 +1,7 @@
+modules = ["nodejs-22"]
+run = "npm run dev"
+
+[deployment]
+deploymentTarget = "static"
+publicDir = "dist"
+build = ["sh", "-c", "npm run build"]

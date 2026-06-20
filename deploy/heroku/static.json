@@ -1,0 +1,8 @@
+{
+  "//": "Heroku static hosting → gjlmotea.herokuapp.com. Copy this file to the repo root, then: heroku buildpacks:add heroku/nodejs && heroku buildpacks:add https://github.com/heroku/heroku-buildpack-static && git push heroku main. (Heroku has no free tier.)",
+  "root": "dist/",
+  "clean_urls": true,
+  "routes": {
+    "/**": "index.html"
+  }
+}
