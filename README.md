@@ -42,10 +42,10 @@
 
 <br>
 
-<!-- Yearly: contribution activity graph (per-month timeline) -->
+<!-- Daily: recent contribution activity graph (auto-generated daily by Actions) -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-activity-graph.vercel.app/graph?username=gjlmotea&hide_border=true&bg_color=00000000&color=ffffff&line=ffffff&point=ffffff&area=true&area_color=ffffff" />
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=gjlmotea&hide_border=true&bg_color=ffffff&color=000000&line=000000&point=000000&area=true&area_color=000000" alt="activity" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/gjlmotea/gjlmotea/output/activity-dark.svg" />
+  <img src="https://raw.githubusercontent.com/gjlmotea/gjlmotea/output/activity-light.svg" alt="activity" />
 </picture>
 
 <br>
