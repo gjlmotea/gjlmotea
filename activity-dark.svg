@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" width="760" height="230" viewBox="0 0 760 230">
+  <title id="title">CONTRIBUTIONS · LAST 31 DAYS</title>
+  <desc id="desc">731 contributions over the last 31 days; maximum 163 in one day.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif; }
+  </style>
+  <text x="380.0" y="24" text-anchor="middle" fill="#999999" font-size="11" letter-spacing="4" font-weight="500" opacity="0.7">CONTRIBUTIONS · LAST 31 DAYS</text>
+  <text x="380.0" y="40" text-anchor="middle" fill="#999999" font-size="9" letter-spacing="2" opacity="0.4">updated 2026-10-31</text>
+  <text x="44" y="54" fill="#999999" font-size="9" letter-spacing="1.5" opacity="0.65">MAX 163</text>
+  <text x="716" y="54" text-anchor="end" fill="#999999" font-size="9" letter-spacing="1.5" opacity="0.65">TOTAL 731</text>
+  <line x1="44" y1="62.0" x2="716" y2="62.0" stroke="#999999" stroke-opacity="0.16" stroke-width="1" />
+  <line x1="44" y1="125.0" x2="716" y2="125.0" stroke="#999999" stroke-opacity="0.16" stroke-width="1" />
+  <line x1="44" y1="188.0" x2="716" y2="188.0" stroke="#999999" stroke-opacity="0.16" stroke-width="1" />
+  <path d="M44.0,188.0 L44.0,185.7 L66.4,180.3 L88.8,167.9 L111.2,164.0 L133.6,169.4 L156.0,175.6 L178.4,177.2 L200.8,179.5 L223.2,185.7 L245.6,178.7 L268.0,184.1 L290.4,184.9 L312.8,178.7 L335.2,178.0 L357.6,183.4 L380.0,171.8 L402.4,164.8 L424.8,62.0 L447.2,140.8 L469.6,154.8 L492.0,167.1 L514.4,171.0 L536.8,130.8 L559.2,167.9 L581.6,176.4 L604.0,185.7 L626.4,181.8 L648.8,180.3 L671.2,174.1 L693.6,187.2 L716.0,173.3 L716.0,188.0 Z" fill="#ffffff" fill-opacity="0.10" />
+  <path d="M44.0,185.7 L66.4,180.3 L88.8,167.9 L111.2,164.0 L133.6,169.4 L156.0,175.6 L178.4,177.2 L200.8,179.5 L223.2,185.7 L245.6,178.7 L268.0,184.1 L290.4,184.9 L312.8,178.7 L335.2,178.0 L357.6,183.4 L380.0,171.8 L402.4,164.8 L424.8,62.0 L447.2,140.8 L469.6,154.8 L492.0,167.1 L514.4,171.0 L536.8,130.8 L559.2,167.9 L581.6,176.4 L604.0,185.7 L626.4,181.8 L648.8,180.3 L671.2,174.1 L693.6,187.2 L716.0,173.3" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" />
+  <circle cx="44.0" cy="185.7" r="2.8" fill="#ffffff"><title>2026-10-01: 3 contributions</title></circle>
+  <circle cx="66.4" cy="180.3" r="2.8" fill="#ffffff"><title>2026-10-02: 10 contributions</title></circle>
+  <circle cx="88.8" cy="167.9" r="2.8" fill="#ffffff"><title>2026-10-03: 26 contributions</title></circle>
+  <circle cx="111.2" cy="164.0" r="2.8" fill="#ffffff"><title>2026-10-04: 31 contributions</title></circle>
+  <circle cx="133.6" cy="169.4" r="2.8" fill="#ffffff"><title>2026-10-05: 24 contributions</title></circle>
+  <circle cx="156.0" cy="175.6" r="2.8" fill="#ffffff"><title>2026-10-06: 16 contributions</title></circle>
+  <circle cx="178.4" cy="177.2" r="2.8" fill="#ffffff"><title>2026-10-07: 14 contributions</title></circle>
+  <circle cx="200.8" cy="179.5" r="2.8" fill="#ffffff"><title>2026-10-08: 11 contributions</title></circle>
+  <circle cx="223.2" cy="185.7" r="2.8" fill="#ffffff"><title>2026-10-09: 3 contributions</title></circle>
+  <circle cx="245.6" cy="178.7" r="2.8" fill="#ffffff"><title>2026-10-10: 12 contributions</title></circle>
+  <circle cx="268.0" cy="184.1" r="2.8" fill="#ffffff"><title>2026-10-11: 5 contributions</title></circle>
+  <circle cx="290.4" cy="184.9" r="2.8" fill="#ffffff"><title>2026-10-12: 4 contributions</title></circle>
+  <circle cx="312.8" cy="178.7" r="2.8" fill="#ffffff"><title>2026-10-13: 12 contributions</title></circle>
+  <circle cx="335.2" cy="178.0" r="2.8" fill="#ffffff"><title>2026-10-14: 13 contributions</title></circle>
+  <circle cx="357.6" cy="183.4" r="2.8" fill="#ffffff"><title>2026-10-15: 6 contributions</title></circle>
+  <circle cx="380.0" cy="171.8" r="2.8" fill="#ffffff"><title>2026-10-16: 21 contributions</title></circle>
+  <circle cx="402.4" cy="164.8" r="2.8" fill="#ffffff"><title>2026-10-17: 30 contributions</title></circle>
+  <circle cx="424.8" cy="62.0" r="2.8" fill="#ffffff"><title>2026-10-18: 163 contributions</title></circle>
+  <circle cx="447.2" cy="140.8" r="2.8" fill="#ffffff"><title>2026-10-19: 61 contributions</title></circle>
+  <circle cx="469.6" cy="154.8" r="2.8" fill="#ffffff"><title>2026-10-20: 43 contributions</title></circle>
+  <circle cx="492.0" cy="167.1" r="2.8" fill="#ffffff"><title>2026-10-21: 27 contributions</title></circle>
+  <circle cx="514.4" cy="171.0" r="2.8" fill="#ffffff"><title>2026-10-22: 22 contributions</title></circle>
+  <circle cx="536.8" cy="130.8" r="2.8" fill="#ffffff"><title>2026-10-23: 74 contributions</title></circle>
+  <circle cx="559.2" cy="167.9" r="2.8" fill="#ffffff"><title>2026-10-24: 26 contributions</title></circle>
+  <circle cx="581.6" cy="176.4" r="2.8" fill="#ffffff"><title>2026-10-25: 15 contributions</title></circle>
+  <circle cx="604.0" cy="185.7" r="2.8" fill="#ffffff"><title>2026-10-26: 3 contributions</title></circle>
+  <circle cx="626.4" cy="181.8" r="2.8" fill="#ffffff"><title>2026-10-27: 8 contributions</title></circle>
+  <circle cx="648.8" cy="180.3" r="2.8" fill="#ffffff"><title>2026-10-28: 10 contributions</title></circle>
+  <circle cx="671.2" cy="174.1" r="2.8" fill="#ffffff"><title>2026-10-29: 18 contributions</title></circle>
+  <circle cx="693.6" cy="187.2" r="2.8" fill="#ffffff"><title>2026-10-30: 1 contributions</title></circle>
+  <circle cx="716.0" cy="173.3" r="2.8" fill="#ffffff"><title>2026-10-31: 19 contributions</title></circle>
+  <text x="44.0" y="215" text-anchor="middle" fill="#999999" font-size="10" letter-spacing="1">OCT 01</text>
+  <text x="268.0" y="215" text-anchor="middle" fill="#999999" font-size="10" letter-spacing="1">OCT 11</text>
+  <text x="492.0" y="215" text-anchor="middle" fill="#999999" font-size="10" letter-spacing="1">OCT 21</text>
+  <text x="716.0" y="215" text-anchor="middle" fill="#999999" font-size="10" letter-spacing="1">OCT 31</text>
+</svg>
